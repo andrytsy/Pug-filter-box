@@ -1,3 +1,31 @@
+/* Mixins */
+flex()
+  display -webkit-box
+  display -ms-flexbox
+  display flex
+
+border-radius(n)
+  -webkit-border-radius n
+  -moz-border-radius n
+  border-radius n
+
+get-bottom-line-styles()
+  position absolute
+  height 2px
+  width 0
+  left 0
+  bottom -1px
+  background-color #ffcb00
+  -webkit-transition .5s ease all
+  transition .5s ease all
+
+get-label-lifted-styles()
+  top 16px
+  font-size 10px
+  -webkit-transform none
+  transform none
+
+/* Classes */
 .main-filter-wrapper
   margin-bottom 16px
   position relative
@@ -6,60 +34,45 @@
   cursor pointer
   position absolute
   top 100px
-  width 100%
   margin-bottom 16px
-  padding 0 108px
+  padding 21px
   font-size 15px
   z-index 50
-  
-  @media only screen and (max-width: 1023px)
-    cursor pointer
+  background-color #092e63
 
   @media only screen and (max-width: 1279px)
     position static
-    margin-left -40px
-    margin-right -40px
     padding 26px 40px
-    width calc(100% + 80px)
+    width calc(100% - 80px)
     background-color #092e63
 
-.main-filter__title
-  color #fff
-  margin-bottom 24px
-
-  @media only screen and (max-width: 1279px)
-    font-size 32px
-
 .main-filter__form
+  flex()
   position relative
-  display -webkit-box
-  display -ms-flexbox
-  display flex
   -webkit-box-orient vertical
   -webkit-box-direction normal
   -ms-flex-direction column
   flex-direction column
 
 .main-filter__inputs
+  flex()
   position relative
-  display -webkit-box
-  display -ms-flexbox
-  display flex
-  margin-bottom 8px
+  margin-bottom 21px
 
   @media only screen and (max-width: 1279px)
     margin-bottom 16px
 
 .location-input
-  position: relative;
-  height: 64px;
-  width: 377px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: end;
-  -ms-flex-align: end;
-  align-items: flex-end;
+  position: relative
+  height: 64px
+  // width: 377px
+  width: 764px
+  display: -webkit-box
+  display: -ms-flexbox
+  display: flex
+  -webkit-box-align: end
+  -ms-flex-align: end
+  align-items: flex-end
 
 .location-input input
   height 100%
@@ -69,10 +82,10 @@
   -webkit-box-sizing border-box
   box-sizing border-box
 
-.location-input input, .location-input__tips
-  width: 100%;
-  border: 1px solid #d4dbe3;
-  border-bottom-left-radius: 2px;
+.location-input input, .location-input__tips, .price-input input, .deadline-input input 
+  width: 100%
+  border: 1px solid #d4dbe3
+  border-bottom-left-radius: 2px
 
 .location-input__dynamic-label
   position absolute
@@ -88,20 +101,13 @@
   transform translateY(-50%)
 
 .location-input__dynamic-label_lifted
-  top 16px
-  font-size 10px
-  -webkit-transform none
-  transform none
+  get-label-lifted-styles()
 
 .location-input__bottom-line
-  position absolute
-  height 2px
-  width 0
-  left 0
-  bottom 0
-  background-color #ffcb00
-  -webkit-transition .5s ease all
-  transition .5s ease all
+  get-bottom-line-styles()
+
+.location-input__bottom-line_expanded
+  width 100%
 
 .location-input__tips
   display none
@@ -131,3 +137,180 @@
   cursor pointer
   &:hover
     background-color #fff5cc
+
+.price-input
+  flex()
+  position relative
+  width 321px
+  height 64px
+  border-left none
+  background-color #fff
+  cursor pointer
+
+  @media only screen and (max-width: 1023px)
+    width 290px
+
+.price-input__dynamic-label
+  position absolute
+  top 50%
+  -webkit-transform translateY(-50%)
+  transform translateY(-50%)
+  left 20px
+  border none
+  color #94a5b9
+  font-size 13px
+  text-transform uppercase
+  pointer-events none
+  -webkit-transition .2s ease all
+  transition .2s ease all
+
+.price-input__dynamic-label_lifted
+  get-label-lifted-styles()
+
+.price-input__bottom-line
+  get-bottom-line-styles()
+
+.price-input__bottom-line_expanded
+  width 100%
+
+.deadline-input
+  position relative
+  height 64px
+  width 150px
+  position relative
+  flex()
+  -webkit-box-align end
+  -ms-flex-align end
+  align-items flex-end
+  border-left none
+  background-color #fff
+  cursor pointer
+
+.deadline-input__dynamic-label
+  position absolute
+  top 50%
+  left 20px
+  color #94a5b9
+  font-size 13px
+  text-transform uppercase
+  pointer-events none
+  -webkit-transition .2s ease all
+  transition .2s ease all
+  -webkit-transform translateY(-50%)
+  transform translateY(-50%)
+  width 75%
+
+.deadline-input__dynamic-label_lifted
+  get-label-lifted-styles()
+
+.deadline-input__bottom-line
+  get-bottom-line-styles()
+
+.deadline-input__bottom-line_expanded
+  width 100%
+
+.main-filter__controls
+  flex()
+  -webkit-box-pack justify
+  -ms-flex-pack justify
+  justify-content space-between
+
+.main-filter__additional
+  height 52px
+  width 250px
+  flex()
+  -webkit-box-align center
+  -ms-flex-align center
+  align-items center
+  -webkit-box-pack center
+  -ms-flex-pack center
+  justify-content center
+  color #fff
+  margin-left: auto;
+
+.additional-params__arrow
+  -webkit-transition .25s ease all
+  transition .25s ease all
+  -webkit-transform none
+  transform none 
+  margin-left auto
+  margin-right 21px
+  -webkit-transform rotateZ(90deg)
+  transform rotateZ(90deg) 
+
+.additional-params__arrow_expanded
+  -webkit-transform rotateX(-50%)
+  transform rotateX(-50%) 
+
+.additional-params__text
+  width 221px
+  font-size 16px
+  color #fff
+  line-height 20px
+  border-bottom 0.5px dashed
+
+.additional-params__counter
+  margin: 0 10px
+  padding 0px 6px
+  background-color #ffcb00
+  color #071321
+  border-radius(7px)
+
+.main-filter__search-on-map
+  position relative
+  width 192px
+  height 52px
+  flex()
+  -webkit-box-align center
+  -ms-flex-align center
+  align-items center
+  -webkit-box-pack center
+  -ms-flex-pack center
+  justify-content center
+  font-size 16px
+  font-weight 500
+  color #fff
+  background-color #10468b
+  border-radius(2px)
+  -webkit-transition border .35s ease, background-color .35s ease
+  transition border .35s ease, background-color .35s ease
+  margin-left: 60px;
+  &:hover
+    color #fff
+    border 0
+    background-color #0e3f7d
+
+// .main-filter__search-button
+//     margin-left: auto;
+//     padding: 24px 20px;
+//     width: 192px;
+//     height: 64px;
+//     border: 0;
+//     background-color: #ffcb00;
+//     border-radius: 2px;
+//     -webkit-transition: background-color .35s ease;
+//     transition: background-color .35s ease;
+//     font-weight: 500;
+//     font-size: 16px;
+
+    // @media only screen and (max-width: 1279px)
+    //   display none!important
+
+.main-filter__search-button-small
+  margin-left 20px
+  padding 0 56px
+  height 52px
+  font-size 16px
+  font-weight 500
+  background-color #ffcb00
+  border 0
+  border-radius(2px)
+  -webkit-transition background-color .35s ease
+  transition background-color .35s ease
+  &:hover
+    background-color #ffb800
+
+  // @media only screen and (min-width: 1280px)
+  //   display none!important
+
+  

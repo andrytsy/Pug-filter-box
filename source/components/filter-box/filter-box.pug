@@ -1,7 +1,5 @@
 div(class='main-filter-wrapper')
     div(class='main-filter')
-        div(class='main-filter__title')
-            h1 Новостройки в Москве и области
         form(class='main-filter__form')
             div(class='main-filter__inputs')
                 div(class='main-filter__location location-input')
@@ -9,7 +7,20 @@ div(class='main-filter-wrapper')
                     div(class='location-input__dynamic-label') Город, район, метро, название ЖК
                     div(class='location-input__bottom-line')
                     div(class='location-input__tips')
-                input(type='text')
-                input(type='text')
+                div(class='main-filter__price price-input')
+                    input(type='text')
+                    div(class='price-input__dynamic-label') Стоимость, руб.
+                    div(class='price-input__bottom-line')
+                div(class='main-filter__deadline deadline-input')
+                    div(class='deadline-input__dynamic-label') Срок сдачи
+                    div(class='deadline-input__bottom-line')
             div(class='main-filter__controls')
+                a(class='main-filter__additional additional-params')
+                    span(class='additional-params__arrow')
+                        svg(width='7' height='12' viewBox='0 0 7 12' fill='none' xmlns='http://www.w3.org/2000/svg')
+                            path(d='M5.89595 10.8977C6.03468 10.7599 6.03468 10.5359 5.89595 10.3981L1.46513 6.00483L5.89595 1.60299C6.03468 1.46517 6.03468 1.2412 5.89595 1.10337C5.75722 0.965543 5.53177 0.965543 5.39304 1.10337L0.719435 5.74641C0.650068 5.81532 0.615385 5.90146 0.615385 5.99622C0.615385 6.08236 0.650068 6.17712 0.719435 6.24603L5.39304 10.8891C5.53177 11.0355 5.75722 11.0355 5.89595 10.8977Z' fill='#' stroke='#fff')
+                    span(class='additional-params__text') Дополнительные параметры
+                    //- span(class='additional-params__counter') 8
+                a(class='main-filter__search-on-map') Новостройки на карте
+                button(class='main-filter__search-button-small') Найти
                 

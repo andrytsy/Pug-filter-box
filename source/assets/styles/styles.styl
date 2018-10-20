@@ -2,18 +2,27 @@
   font-family Roboto
   font-style normal
   font-weight 400
-  src url(../fonts/Roboto.woff2) format(woff2), url(../fonts/Roboto.woff) format(woff), url(../fonts/Roboto.ttf) format(truetype);
+  src url(../fonts/Roboto.woff2) format(woff2), url(../fonts/Roboto.woff) format(woff), url(../fonts/Roboto.ttf) format(truetype)
+
+html
+  height 100%
+  margin 0
+  padding 0
 
 body
-  font-family Roboto
+  font-family Roboto, 'Arial'
   color #071321
   background-color #f3f3f9
   -webkit-font-smoothing antialiased
+  height 100%
+  margin 0
+  padding 0
 
 button, div, input
   outline 0
   -webkit-box-shadow none
   box-shadow none
+  border none
 
 .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6
   font-family 'Roboto'
@@ -32,3 +41,24 @@ a
   &:hover
     outline 0
     color inherit
+
+.container
+  margin auto
+  padding 0 12px
+  width 100%
+  height 100%
+  max-width 1277px
+
+  @media only screen and (min-width: 768px)
+    padding 0 26px
+  @media only screen and (min-width: 1024px)
+    padding 0 40px
+  @media only screen and (min-width: 1280px)
+    padding 0 22px
+
+.page-wrapper
+  margin-bottom 0
+  padding-bottom 0
+  overflow hidden
+  position relative
+  background-color #fff
