@@ -19,7 +19,6 @@ let FilterBox = {
                                         : '<a href="' + item.link + '" class="location-input__tips-item">' + item.name + '</a>'
             block.append(element)
         })
-        console.log('Ok!');
     }
 }
 

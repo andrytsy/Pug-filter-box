@@ -1,0 +1,36 @@
+/* Mixins */
+flex()
+  display -webkit-box
+  display -ms-flexbox
+  display flex
+
+border-radius(n)
+  -webkit-border-radius n
+  -moz-border-radius n
+  border-radius n
+
+appearance()
+  -webkit-appearance none
+  -moz-appearance none
+  -ms-appearance none
+  -o-appearance none
+  appearance none
+
+transition(options)
+  -webkit-transition options
+  transition options
+
+get-bottom-line-styles()
+  position absolute
+  height 2px
+  width 0
+  left 0
+  bottom -1px
+  background-color #ffcb00
+  transition(.5s ease all)
+
+get-label-lifted-styles()
+  top 16px
+  font-size 10px
+  -webkit-transform none
+  transform none
