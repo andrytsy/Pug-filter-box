@@ -2,17 +2,12 @@
 import 'normalize.css';
 import './assets/styles/styles.styl';
 import FilterBox from './components/filter-box/filter-box';
+FilterBox.showLocationList();
 
 let locationDisplay = false;
 let priceDisplay = false;
 let deadlineDisplay = false;
 let additionalDisplay = false;
-
-function render () {
-    FilterBox.showLocationList();
-}
-
-render();
 
 function searchClickInputCB (inputType, event) {
     event.stopPropagation();

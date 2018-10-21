@@ -7,9 +7,9 @@ const devserver = require('./webpack/devserver');
 const stylus = require('./webpack/stylus');
 const css = require('./webpack/css');
 const extractCSS = require('./webpack/css.extract');
-const uglifyJS = require('./webpack/js.uglify');
 const images = require('./webpack/images');
 const fonts = require('./webpack/fonts');
+const babel = require('./webpack/babel');
 
 const PATHS = {
     source: path.join(__dirname, 'source'),
@@ -42,22 +42,22 @@ const common = merge([
     },
     pug(),
     images(),
-    fonts()
+    fonts(),
+    stylus()
 ]);
 
 module.exports = function(env) {
     if (env === 'production'){
         return merge([
             common,
-            extractCSS(),
-            uglifyJS()
+            babel(),
+            extractCSS()
         ]);
     }
     if (env === 'development'){
         return merge([
             common,
             devserver(),
-            stylus(),
             css()
         ])
     }

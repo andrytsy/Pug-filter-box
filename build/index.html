@@ -3,10 +3,99 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1.0, width=device-width">
-    <title>Index page
-    </title>
-  <link href="./css/common.css" rel="stylesheet"><link href="./css/index.css" rel="stylesheet"></head>
+    <title>Filter box</title>
+  <link href="./css/index.css" rel="stylesheet"></head>
   <body>
-    <h1>Традиционная проверка</h1><img src="images/webpack.svg" width="100">
+    <div class="container page-wrapper">
+      <div class="main-filter-wrapper">
+        <div class="main-filter">
+          <form class="main-filter__form">
+            <div class="main-filter__inputs">
+              <div class="main-filter__location location-input">
+                <input type="text">
+                <div class="location-input__dynamic-label">Город, район, метро, название ЖК</div>
+                <div class="location-input__bottom-line"></div>
+                <div class="location-input__tips"></div>
+              </div>
+              <div class="main-filter__price price-input">
+                <input type="text">
+                <div class="price-input__dynamic-label">Стоимость, руб.</div>
+                <div class="price-input__bottom-line"></div>
+              </div>
+              <div class="main-filter__price-small price-input-small">
+                <input type="text">
+                <div class="price-input-small__dynamic-label_lifted">Стоимость, руб.</div>
+                <div class="price-input-small__dynamic-label">От</div>
+                <input type="text">
+                <div class="price-input-small__dynamic-label">До</div>
+              </div>
+              <div class="price-input-small__price-type price-type-group">
+                      <label>
+                        <input type="radio" name="price-type" value="0"><span>Все</span>
+                      </label>
+                      <label>
+                        <input type="radio" name="price-type" value="1"><span>За м2</span>
+                      </label>
+              </div>
+              <div class="main-filter__deadline deadline-input">
+                <div class="deadline-input__dynamic-label">Срок сдачи</div>
+                <div class="deadline-input__bottom-line"></div>
+              </div>
+            </div><a class="main-filter__additional-btn additional-params show-xs"><span class="additional-params__arrow">
+                <svg width="7" height="12" viewBox="0 0 7 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5.89595 10.8977C6.03468 10.7599 6.03468 10.5359 5.89595 10.3981L1.46513 6.00483L5.89595 1.60299C6.03468 1.46517 6.03468 1.2412 5.89595 1.10337C5.75722 0.965543 5.53177 0.965543 5.39304 1.10337L0.719435 5.74641C0.650068 5.81532 0.615385 5.90146 0.615385 5.99622C0.615385 6.08236 0.650068 6.17712 0.719435 6.24603L5.39304 10.8891C5.53177 11.0355 5.75722 11.0355 5.89595 10.8977Z" fill="#" stroke="#fff"></path>
+                </svg></span><span class="additional-params__text">Дополнительные параметры</span></a>
+            <div class="main-filter__additional additional-controls">
+              <div class="additional-controls__row btn-group">
+                <div class="btn-group__title">Расположение</div>
+                <div class="btn-group__item-location">
+                        <label>
+                          <input type="radio" name="location" value="0"><span>Все</span>
+                        </label>
+                        <label>
+                          <input type="radio" name="location" value="1"><span>Москва</span>
+                        </label>
+                        <label>
+                          <input type="radio" name="location" value="2"><span>Новая Москва</span>
+                        </label>
+                        <label>
+                          <input type="radio" name="location" value="3"><span>Подмосковье</span>
+                        </label>
+                </div>
+                <div class="btn-group__item-location checkbox-group">
+                        <label class="checkbox-group__item">
+                          <input type="checkbox"><span>Округ</span>
+                        </label>
+                        <label class="checkbox-group__item">
+                          <input type="checkbox"><span>Район</span>
+                        </label>
+                        <label class="checkbox-group__item">
+                          <input type="checkbox"><span>Метро</span>
+                        </label>
+                        <label class="checkbox-group__item">
+                          <input type="checkbox"><span>Шоссе</span>
+                        </label>
+                        <label class="checkbox-group__item">
+                          <input type="checkbox"><span>Шоссе</span>
+                        </label>
+                        <label class="checkbox-group__item">
+                          <input type="checkbox"><span>Город МО</span>
+                        </label>
+                        <label class="checkbox-group__item">
+                          <input type="checkbox"><span>Район МО</span>
+                        </label>
+                </div>
+              </div>
+            </div>
+            <div class="main-filter__controls controls-group"><a class="controls-group__additional additional-params hide-xs"><span class="additional-params__arrow">
+                  <svg width="7" height="12" viewBox="0 0 7 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M5.89595 10.8977C6.03468 10.7599 6.03468 10.5359 5.89595 10.3981L1.46513 6.00483L5.89595 1.60299C6.03468 1.46517 6.03468 1.2412 5.89595 1.10337C5.75722 0.965543 5.53177 0.965543 5.39304 1.10337L0.719435 5.74641C0.650068 5.81532 0.615385 5.90146 0.615385 5.99622C0.615385 6.08236 0.650068 6.17712 0.719435 6.24603L5.39304 10.8891C5.53177 11.0355 5.75722 11.0355 5.89595 10.8977Z" fill="#" stroke="#fff"></path>
+                  </svg></span><span class="additional-params__text">Дополнительные параметры</span></a><a class="controls-group__search-on-map">Новостройки на карте</a>
+              <button class="controls-group__search-button-small">Найти</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
   <script type="text/javascript" src="js/common.js"></script><script type="text/javascript" src="js/index.js"></script></body>
 </html>
