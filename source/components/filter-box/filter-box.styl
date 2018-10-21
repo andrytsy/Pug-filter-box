@@ -1,14 +1,17 @@
-@import '../../assets/styles/variables.styl';
-@import '../../assets/styles/mixins.styl';
+@import '../../assets/styles/variables.styl'
+@import '../../assets/styles/mixins.styl'
 
 /* Classes */
+.hide-xs
+  @media only screen and (max-width: $screen-xs)
+    display none!important
+
 .main-filter-wrapper
   margin-bottom 16px
   position relative
 
 .main-filter
   cursor pointer
-  position absolute
   top 100px
   width calc(100% - 80px)
   margin-bottom 14px
@@ -17,6 +20,7 @@
   z-index 50
   background-color $_blue-3
   color #fff
+  margin 0 auto
 
   @media only screen and (max-width: $screen-lg)
     position static
@@ -55,6 +59,18 @@
     -webkit-box-pack justify
     -ms-flex-pack justify
     justify-content space-between
+
+    @media only screen and (max-width: $screen-xs)
+      flex-wrap wrap
+      justify-content center
+
+  &__additional-btn
+    display none
+
+    @media only screen and (max-width: $screen-xs)
+      flex()
+      width 260px
+      margin 0 auto 20px
 
   &__additional
     height 0px
@@ -218,6 +234,9 @@
       get-label-lifted-styles()
     @media only screen and (max-width: $screen-xs)
       display block
+
+  &__price-type
+    width 100%
   
 .deadline-input
   position relative
@@ -236,7 +255,7 @@
   @media only screen and (max-width: $screen-sm)
     width 137px
   @media only screen and (max-width: $screen-xs)
-    width 50%
+    width 100%
 
   &__dynamic-label
     position absolute
@@ -276,6 +295,8 @@
     justify-content center
     color #fff
     margin-left auto
+    @media only screen and (max-width: $screen-xs)
+      margin 0
 
   &__search-on-map
     position relative
@@ -295,11 +316,15 @@
     border-radius(2px)
     transition(border .35s ease, background-color .35s ease)
     margin-left: 60px
-    
     &:hover
       color #fff
       border 0
       background-color $_blue-2
+
+    @media only screen and (max-width: $screen-xs)
+      margin 0
+      width 100%
+      margin-bottom 16px
 
   &__search-button-small
     cursor pointer
@@ -312,9 +337,13 @@
     border 0
     border-radius(2px)
     transition(background-color .35s ease)
-
     &:hover
       background-color $_golden-2
+
+    @media only screen and (max-width: $screen-xs)
+      margin 0
+      width 100%
+      margin-bottom 26px
 
 .additional-params
   &__arrow
@@ -347,21 +376,17 @@
   font-size 0
   margin-bottom 21px
   
-  ul
-    display: inline-block
-    margin-right 21px
-
 .btn-group__title
   color $_gray
   font-size 14px
 
-.btn-group__item-location
+.btn-group__item-location, .price-type-group
   display inline-block
   padding-right 20px
   margin-top 15px
 
   @media only screen and (max-width: $screen-md)
-    backface-visibility visible
+    display flex
 
   label
     position relative
@@ -389,8 +414,22 @@
     span
       position relative
       z-index 2
+      white-space: nowrap;
 
 .checkbox-group
   &__item
     margin-right 5px
 
+.price-type-group
+  display none
+  margin-bottom 15px
+
+  @media only screen and (max-width: $screen-xs)
+    display flex
+    padding 0
+    margin-top 0
+
+  label
+    width: 50%
+    text-align center
+    padding 15px 0

@@ -73,7 +73,7 @@ $('html').click('fast', function () {
     }
 });
 
-$('.controls-group__additional').click('fast', function () {
+$('.additional-params').click('fast', function () {
     additionalDisplay = !additionalDisplay;
 
     if (additionalDisplay) {
